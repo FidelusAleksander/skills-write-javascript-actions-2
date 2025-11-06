@@ -66915,7 +66915,7 @@ const core = __nccwpck_require__(7484);
 async function run() {
   const joke = await getJoke();
   console.log(joke);
-  core.setOutput("joke-output", joke);
+  core.setOutput("joke", joke);
 }
 
 run();
