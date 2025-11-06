@@ -2,6 +2,11 @@ name: Joke Action
 on:
   issue_comment:
     types: [created]
+
+permissions:
+  issues: write
+  contents: read
+
 jobs:
   joke:
     if: startsWith(github.event.comment.body, '/joke')
@@ -16,5 +21,4 @@ jobs:
         with:
          issue-number: ${{ github.event.issue.number }}
          body: ${{ steps.get-joke.outputs.joke }}
-         
          
