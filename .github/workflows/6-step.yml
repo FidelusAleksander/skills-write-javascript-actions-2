@@ -72,6 +72,7 @@ jobs:
           fi
 
       - name: Update comment - step results
+        if: github.event.workflow_run.conclusion != 'skipped'
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
